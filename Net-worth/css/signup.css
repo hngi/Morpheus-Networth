@@ -9,8 +9,12 @@ body{
      font-family: 'Poppins', sans-serif;
 }
 
+.navbar-main{
+  background-color: #10416B;;
+}
+
 .navbar img{
-  height:35px;
+  height: 38px;
   width:200px;
 }
 
@@ -31,6 +35,52 @@ body{
   top: 20%;
 }
 
+.mainform{
+  margin-left: 10%;
+}
+
+.content{
+  display: flex;
+ flex-direction: row;
+ margin: auto 3%;
+}
+
+.content > *{
+  margin-right: 16%;
+  width: 50%;
+}
+
+
+.content .group label{
+  margin-bottom: 0;
+}
+
+.content .group label h2{
+  line-height: 1.2;
+  font-size: 20px;
+}
+
+.content .d-flex{
+  background: rgba(6, 6, 120, 0.06);
+  width: 90%;
+}
+
+.content .group h5{
+      font-size: 1.5rem;
+    margin-bottom: 0;
+    padding: 4px;
+    margin-top: 3px;
+}
+.content input{
+  border: none;
+  border-radius: 2px;
+}
+
+.content input:hover, .content input:focus{
+  background: transparent;
+  outline: none;
+}
+
 .body-form h3{
      font-size: 2.15em;
      font-weight: bolder;
@@ -44,7 +94,7 @@ body{
 }
 
 .form-group{
-  margin: 5%;
+  margin: 3%;
 }
 
 label{
@@ -58,17 +108,16 @@ label{
     border-radius: 10px;
     border: 1px solid #1E1E1E;
     background-color: transparent;
-     color: #ABAAAA;
+   /*  color: #ABAAAA; */
 }
 
 .submit-btn{
-    width: 100%;
   color: #ffffff;
   background: #10416B;
   border: 1px solid #10416B;
   border-radius: 10px;
    padding: 10px;
-      font-weight: bold;
+    font-weight: bold;
 }
 a{
     color: #10416B;
@@ -95,6 +144,27 @@ color: #10416B;
 
 
 
+@media (max-width: 576px){
+
+.mainform{
+  margin-left: auto;
+}
+  .content{
+    flex-direction: column;
+    margin-top: 5%;
+  }
+  .content > *{
+    margin-right: 0;
+    width: 90%;
+   margin: 5% auto;
+  }
+
+  .content .d-flex {
+ 
+    width: 100%;
+}
+}
+
 @media (min-width: 768px){
   .half{
     top: 10%;
@@ -109,12 +179,12 @@ color: #10416B;
     }
 
     h1{
-      font-size: 20px;
+      font-size: 20px !important;
       line-height:25px;
     }
 
     h2{
-      font-size: 15px;
+     font-size: 10px !important;
       line-height: 25px;
       }
     }
@@ -136,5 +206,11 @@ color: #10416B;
         margin-top: 10%;
         max-width: 80%;
       }
+
+      h2{
+     font-size: 10px !important;
+      line-height: 25px;
+      }
+    }
 
     }
