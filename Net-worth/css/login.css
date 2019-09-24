@@ -1,63 +1,59 @@
 
-body, header, form{
-    background-color: #ffffff;
-    font-family: 'Poppins', sans-serif;
+body{
+    padding: 15px;
+  height: 100vh;
+  background-image: url("../img/cont-img.png");
+  background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #FAFAFA;
+     font-family: 'Poppins', sans-serif;
 }
-header{
-  left: 30px;
-  top: 10px;
+
+.navbar img{
+      height:35px;
+        width:200px;
 }
-.body-form {
-  position: absolute;
-  width: 466px;
-  height: 333px;
-  left: 487px;
-  top: 280px;
+
+.body-form{
+  margin-top: 10%;
+      width: 30vw;
+      margin: 10% auto;
 }
-h3{
-width: 113px;
-height: 45px;
-left: 663px;
-top: 280px;
-font-style: normal;
-font-weight: bold;
-font-size: 36px;
-line-height: 54px;
-color: #ABAAAA;
+
+.body-form h3{
+     font-size: 2.15em;
+     font-weight: bolder;
+     text-align: center;
+     color: #343434;
 }
-form{
-  width: 466px;
-  height: 333px;
-  left: 380px;
-  top: 280px;
+
+label{
+  color: #444444;
+  font-size: 1em;
+  font-weight: lighter;
 }
+
 .form-group{
-width: 466px;
-height: 59px;
-left: 487px;
-top: 362px;
-border: 1px solid #ABAAAA;
-border-radius: 10px;
+  margin: 5%;
 }
- .form-control{
-   height: 59px;
-   font-style: normal;
-   font-weight: normal;
-   font-size: 18px;
-   line-height: 27px;
-   /* identical to box height */
 
-   color: #ABAAAA;
-
-   border-radius: 10px;
+.form-control{
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #1E1E1E;
+    background-color: transparent;
+     color: #ABAAAA;
 }
+
 .submit-btn{
-  width: 466px;
-  height: 59px;
+ width: 100%;
   color: #ffffff;
   background: #10416B;
   border: 1px solid #10416B;
   border-radius: 10px;
+  padding: 10px;
+      font-weight: bold;
 }
 a{
     color: #10416B;
@@ -66,3 +62,43 @@ a{
   color: rgba(0,0,0,0.4);
   text-align: center;
 }
+
+
+
+
+
+  @media (min-width: 576px) {
+    .container {
+      max-width: 100%;
+      }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 100%;
+      }
+      
+  }
+
+  @media (min-width: 992px) {
+    .container {
+      max-width: 100%;
+      }
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 100%;
+      }
+  }
+
+    @media (max-width:575px) {
+    .body-form{
+        width: 90%;
+    }
+
+    .container img{
+        display: none;
+    }
+  
+}  
