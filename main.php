@@ -1,4 +1,18 @@
-<?php include ('dbcon.php');?>
+<?php 
+
+require_once "includes/connection.php";
+
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +31,9 @@
     <header class="navbar navbar-main">
         <a href="#" class="navbar-brand p-0"><img src="../img/Group_no9oad.png" height="65" alt="logo"></a>
     </header>
-
+    <div class="page-header">
+        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["email"]); ?></b>. Welcome to Morphworth.</h1>
+    </div>
     <div class="container mt-4 p-0">
         <h1 style=" font-size: 35px; text-align: center;">MorphWorth Calculator</h1>
         <form class="mt-2 mainform"method="POST">
