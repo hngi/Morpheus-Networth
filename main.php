@@ -20,16 +20,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="css/signup.css">
     <title>Main</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 </head>
 
 <body class="p-0" style="background-color: #FAFAFA">
     <header class="navbar navbar-main">
-        <a href="#" class="navbar-brand p-0"><img src="../img/Group_no9oad.png" height="65" alt="logo"></a>
+        <a href="#" class="navbar-brand p-0"><img src="img/Group_no9oad.png" height="65" alt="logo"></a>
     </header>
     <div class="page-header">
         <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["email"]); ?></b>. Welcome to Morphworth.</h1>
