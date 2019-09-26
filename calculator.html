@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<title> MorphWorth Calculator </title> 
+<link rel="stylesheet" href="styles.css" rel="stylesheet">
+</head>
+
+<!-- Header -->
+<div class="header">
+
+    <br /> <a id="signout" href="#signout">Sign Out</a> 
+
+</div>
+
+<div>
+    <br />
+    <br /><br />
+<center> <h1 class="Calculator"> MorphWorth Calculator</h1> </center>
+ </div>
+
+
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" data-toggle="modal" data-target="#id01">Assets</button>
+<br />
+<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;" data-toggle="modal" data-target="#id02">Liabilies</button>
+<br />
+<button onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Net Worth</button>
+
+<div id="id01" class="modal hide fade">
+  
+ 
+    <div class="imgcontainer">
+<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+
+</div>
+
+<body>
+
+       
+
+    <table class="glass">
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+			<h1 class="asset"> Add Asset </h1>
+                        <label>Description</label>
+<label class="validation-error hide" id="descriptionValidationError">This field is required.</label>
+                        <input type="text" name="description" id="description">
+                    </div>
+                   
+                    <div>
+                        <label>Value</label>
+                        <input type="number" name="price" id="price">
+                    </div>
+                    
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="ADD">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="assetList">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                          
+                            <th>Value</th>
+                            
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+
+<!-- Modal table for Add Liability-->
+
+    <div id="id02" class="modal hide fade">
+  
+ 
+        <div class="imgcontainer">
+    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    
+    </div>
+    
+    <body>
+    
+           
+    
+        <table class="glass">
+            <tr>
+                <td>
+                    <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                        <div>
+                <h1 class="asset"> Add Liability </h1>
+                            <label>Description</label>
+    <label class="validation-error hide" id="descriptionValidationError">This field is required.</label>
+                            <input type="text" name="description" id="description">
+                        </div>
+                        
+                        <div>
+                            <label>Value</label>
+                            <input type="number" name="price" id="price">
+                        </div>
+                        
+                        <div  class="form-action-buttons">
+                            <input type="submit" value="ADD">
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    <table class="list" id="assetList">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                
+                                <th>Value</th>
+                                
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
