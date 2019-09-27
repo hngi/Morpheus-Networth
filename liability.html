@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<title> MorphWorth Calculator </title> 
+<link rel="stylesheet" href="styles.css" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<!-- Header -->
+<div class="header">
+
+    <span> <a href="#signout">Sign Out</a> </span>
+
+</div>
+
+
+<!-- Navigation -->
+
+<div class="sidenav active"> 
+<a href="" onclick="popup()">Net Worth</a> 
+<br /> <br /> <br />
+<a href="asset.html">Asset</a> 
+<br /> <br /> <br />
+<a href="liability.html">Liability</a> 
+
+</div>
+
+<body>
+    <table class="glass">
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+			<h1 class="asset"> Add Liability </h1>
+                        <label>Description</label>
+<label class="validation-error hide" id="descriptionValidationError">This field is required.</label>
+                        <input type="text" name="description" id="description">
+                    </div>
+                    <div>
+                        <label>Quantity</label>
+                        <input type="number" name="quantity" id="quantity">
+                    </div>
+                    <div>
+                        <label>Value</label>
+                        <input type="number" name="price" id="price">
+                    </div>
+                    
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="ADD">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="assetList">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Value</th>
+                            
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="asset_liability.js"></script>
+    <script src="result.js"></script>
+</body>
+
+</html>
