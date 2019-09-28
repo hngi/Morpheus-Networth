@@ -2,8 +2,16 @@
 
 <img src="https://res.cloudinary.com/ifeaminu/image/upload/v1569677626/Groupmorphwort_logo_qphpla.png">
 
-This is the official repository of Team Morpheus Networth Calculator App for the HNGI 6
-The Networth calculator is named MorphWorth.  It calculates a users Assets, Liabilities and finally Net worth pertime.
+This is the official repository of Team Morpheus Networth Calculator App for HNGI 6
+
+The Networth calculator is named MorphWorth.  It;
+- Allows assets inputs by the user 
+- Liabilities inputs
+- User can edit and delete their inouts
+- Sums up assets and liabilities
+- Calculates total Net worth of the user.
+
+[Here is the Figma design](https://www.figma.com/file/EdJXAVkanZfhrmdkODnX0o/MorphWorth?node-id=19%3A0)  
 
 
 ## Installation
