@@ -45,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     // Bind result variables
                     $stmt->bind_result($UserID, $email, $hashed_password);
                     if($stmt->fetch()){
-                        if(password_verify($password, $hashed_password)){
+                        if(password_verify($password, $hashed_password) or password_verify($password)){
                             // Password is correct, so start a new session
                             session_start();
                             
@@ -122,7 +122,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <div class="form-group">
                             <button type="submit" class="submit-btn" value="Login">Log In</button>
                         </div>
-                        <h6 class=""> Not registered yet? <a href="index.php"> Sign Up </a> </h6>
+                         <h6 class="mt-2 "> <a href="password_reset.php">  Forgot Password? </a> </h6>
+                        <h6 class="mt-3"> Not registered yet? <a href="index.php"> <b> Sign Up </b> </a> </h6>
                     </form>
                 </div>
             </form>
