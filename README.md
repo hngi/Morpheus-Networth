@@ -9,6 +9,7 @@ The Networth calculator is named MorphWorth.  It;
 - User can edit and delete their inputs
 - Sums up assets and liabilities
 - Calculates total Net worth of the user.
+- Allow users to contact us.
 
 [Here is the Figma design](https://www.figma.com/file/EdJXAVkanZfhrmdkODnX0o/MorphWorth?node-id=19%3A0)  
 
@@ -16,7 +17,8 @@ The Networth calculator is named MorphWorth.  It;
 ## Installation
 
 - Download either Wamp or Xampp server is needed
--Download phpmailer stable version
+- Download phpmailer stable version and Extract to your working directory
+
 - Clone the repository into your htdocs folder located in your xampp or www folder.
 - Start your xampp application and Start Apache and MySql 
 - Run your program through localhost/folder_name.
