@@ -41,7 +41,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt->close();
     }
     
-
     // Validate email
     if(empty(trim($_POST["email"]))){
         $email_err = "Please enter your email.";
@@ -153,7 +152,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <header class="navbar p-0">
         <a href="#" class="navbar-brand p-0"><img src="https://res.cloudinary.com/anikefisher/image/upload/v1569282034/Group_no9oac.png" height="65" alt="logo"></a>
-    </header>
+<a href ="contact_form.php" class="navbar-brand " style="color:#083f79;">Contact US</a>   
+   </header>
     <div style="margin-top:1%" class="container">
         <div class="row body-form">
             <div class="col-md-6 half">
