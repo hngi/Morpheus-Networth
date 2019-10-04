@@ -41,7 +41,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt->close();
     }
     
-
     // Validate email
     if(empty(trim($_POST["email"]))){
         $email_err = "Please enter your email.";
@@ -78,8 +77,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate password
     if(empty(trim($_POST["password"]))){
         $password_err = "Please enter your password.";     
-    } elseif(strlen(trim($_POST["password"])) < 6){
-        $password_err = "Password must be at least 6 characters.";
+    } elseif(strlen(trim($_POST["password"])) < 8){
+        $password_err = "Password must be at least 8 characters.";
+   elseif(!preg_match("#[0-9]+#",$password)) {
+        $password_err = "Your Password Must Contain At Least 1 Number!";
+    }
+    elseif(!preg_match("#[A-Z]+#",$password)) {
+        $password_err = "Your Password Must Contain At Least 1 Capital Letter!";
+    }
+    elseif(!preg_match("#[a-z]+#",$password)) {
+        $password_err = "Your Password Must Contain At Least 1 Lowercase Letter!";
+    }
     } else{
         $password = trim($_POST["password"]);
     }
@@ -144,7 +152,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <header class="navbar p-0">
         <a href="#" class="navbar-brand p-0"><img src="https://res.cloudinary.com/anikefisher/image/upload/v1569282034/Group_no9oac.png" height="65" alt="logo"></a>
-    </header>
+<a href ="contact_form.php" class="navbar-brand " style="color:#083f79;">Contact US</a>   
+   </header>
     <div style="margin-top:1%" class="container">
         <div class="row body-form">
             <div class="col-md-6 half">
@@ -168,7 +177,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             </div>
                             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                                 <label for="password">Password</label>
-                                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="******" value="<?php echo $password; ?>">
+                                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="******" value="<?php echo $password; ?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                                 <span class="help-block text-danger"><?php echo $password_err; ?></span>
                             </div>
                             <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
