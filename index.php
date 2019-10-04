@@ -1,9 +1,10 @@
 <?php 
-require_once "connection.php";
+require_once "includes/connection.php";
+require_once "includes/settings.php";
  
 // Define variables and initialize with empty values
-$name= $email = $password = $confirm_password = "";
-$name_err=$email_err = $password_err = $confirm_password_err = "";
+$name= $email= $password= $confirm_password= "";
+$name_err= $email_err= $password_err= $confirm_password_err= "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -41,6 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt->close();
     }
     
+
     // Validate email
     if(empty(trim($_POST["email"]))){
         $email_err = "Please enter your email.";
@@ -75,20 +77,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Validate password
+    $password = trim($_POST["password"]);
     if(empty(trim($_POST["password"]))){
         $password_err = "Please enter your password.";     
     } elseif(strlen(trim($_POST["password"])) < 8){
         $password_err = "Password must be at least 8 characters.";
-   elseif(!preg_match("#[0-9]+#",$password)) {
+    } elseif(!preg_match("#[0-9]+#", $password)) {
         $password_err = "Your Password Must Contain At Least 1 Number!";
-    }
-    elseif(!preg_match("#[A-Z]+#",$password)) {
+    }elseif(!preg_match("#[A-Z]+#", $password)) {
         $password_err = "Your Password Must Contain At Least 1 Capital Letter!";
-    }
-    elseif(!preg_match("#[a-z]+#",$password)) {
+    }elseif(!preg_match("#[a-z]+#", $password)) {
         $password_err = "Your Password Must Contain At Least 1 Lowercase Letter!";
-    }
-    } else{
+    }else{
         $password = trim($_POST["password"]);
     }
     
@@ -132,9 +132,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     // Close connection
     $mysqli->close();
-}
-	
+}	
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -152,8 +152,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <header class="navbar p-0">
         <a href="#" class="navbar-brand p-0"><img src="https://res.cloudinary.com/anikefisher/image/upload/v1569282034/Group_no9oac.png" height="65" alt="logo"></a>
-<a href ="contact_form.php" class="navbar-brand " style="color:#083f79;">Contact US</a>   
-   </header>
+    </header>
     <div style="margin-top:1%" class="container">
         <div class="row body-form">
             <div class="col-md-6 half">
@@ -161,6 +160,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <h2>Calculating your networth just got easier with MorphWorth</h2>
             </div>
             <div class="col-md-6 form">
+                <a class="login" href="<?= 'https://accounts.google.com/o/oauth2/auth?scope=' . urlencode('https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email') . '&redirect_uri=' . urlencode(CLIENT_REDIRECT_URL) . '&response_type=code&client_id=' . CLIENT_ID . '&access_type=online' ?>"><img alt="googlelogin" src="img/sign-in-with-google.png" width="150px" sizes="100px"></a>
                 <h3 class="body-text"> Sign Up! </h3>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <div class="form-center">
@@ -177,12 +177,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             </div>
                             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                                 <label for="password">Password</label>
-                                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="******" value="<?php echo $password; ?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                                <input type="password" name="password" class="form-control" placeholder="******" value="<?php echo $password; ?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                                 <span class="help-block text-danger"><?php echo $password_err; ?></span>
                             </div>
                             <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
                                 <label for="password">Confirm Password</label>
-                                <input type="password" name="confirm_password" class="form-control" id="exampleInputPassword2" placeholder="******" value="<?php echo $confirm_password; ?>">
+                                <input type="password" name="confirm_password" class="form-control" placeholder="******" value="<?php echo $confirm_password; ?>">
                                 <span class="help-block text-danger"><?php echo $confirm_password_err; ?></span>
                             </div>
                             <div class="form-group">
