@@ -22,7 +22,7 @@ require 'phpmailer/PHPMailerAutoload.php';
 		$mail->addReplyTo($email=$_POST['email'] );
 		$mail->Subject = 'Contact Form-Email';
 		$mail->IsHTML(true);
-	    $mail->Body ='Message:'.$_POST['body'];
+	    $mail->Body =$_POST['body'];
 		
 		
 		
